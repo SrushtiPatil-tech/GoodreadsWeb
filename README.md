@@ -1,32 +1,52 @@
-# Goodreads
+# 📚 Goodreads Pro – A Smarter Goodreads for All
 
-A modern book recommendation and reading platform that helps readers discover their next favorite book.
+## 🔍 Overview
+A modern responsive static website inspired by Goodreads, featuring a comprehensive Kid Mode and interactive features.
+Users can stream audiobooks or read softcopy PDFs online, removing the need to download files and purshasing offline. Everything is accessible in one place, making reading more convenient than ever.
+Dual-Mode Experience (Standard & Kid) makes it inclusive and family-friendly.
 
-## Features
-- Book discovery and recommendations
-- Reading progress tracking
-- Interactive book matching quiz
-- Kids mode for young readers
-- Premium subscription options
 
-## How to Run Locally
-1. Clone or download this repository
-2. Open `index.html` in your web browser
-3. Navigate through the site using the navigation menu
+🌐 **Live Site**: https://goodreads-web.vercel.app/
 
-## Deployment on Replit
-1. Import the repository to Replit
-2. The project will automatically run using Python's built-in HTTP server
-3. Click the "Run" button in Replit
-4. Your website will be live at the provided Replit URL
+---
 
-## Structure
-- HTML files for each page
-- `styles/` directory contains CSS files
-- `js/` directory contains JavaScript files
+##  Existing Features (Inspired by Goodreads)
 
-## Technology Stack
-- Pure HTML5
-- CSS3 for styling
-- Vanilla JavaScript
-- No build tools or frameworks required
+- Amazon Integration: Bookstore & Purchase Links
+- Book Catlog: Bookshelves, reviews and rating
+- Community Features: Friends & Social Interaction, Groups & Discussions and Author Pages & Q&A.
+
+---
+
+## ✨ New Added Features
+
+### Standard Mode 
+
+- Subscription Plans: Premium features for enhanced reading experience online.
+- Book Match Quiz: Get personalized book recommendations based on preferences.
+- Stream & Read: Stream audiobooks or read book PDFs online, all in one place.
+- Book Discovery: Browse featured, trending, and audiobooks.
+- Reading Tracker: Monitor reading progress and set goals.
+
+### Kid Mode 
+
+- Bedtime Stories: Curated collection of bedtime tales
+- Read-Aloud Functionality: Audio narration for young readers
+---
+
+## 🛠️ Technologies Used & Development
+
+- **Frontend**: HTML, CSS, JavaScript
+- **AI Tools**: OpenAI API for summaries, recommendations
+- **Backend** : Node.js
+- **Version Control**: Git & GitHub
+- **Deployment**: Vercel 
+The project is structured into three main files:
+- `index.html` - Main structure and content
+- `style.css` - Styling and animations
+- `script.js` - Interactive functionality
+
+## New Featured WebPage
+
+![Screenshot 2025-05-04 200617](https://github.com/user-attachments/assets/fda950a7-c9e7-49a5-be7c-1df70a5af663)
+
