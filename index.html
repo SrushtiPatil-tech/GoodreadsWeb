@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goodreads - Meet your next favorite book</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/home.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="header">
+            <nav class="nav-container">
+                <a href="index.html" class="logo">Goodreads</a>
+                <div class="nav-links">
+                    <a href="book-match.html">Book Match</a>
+                    <a href="reading-tracker.html">Reading Tracker</a>
+                    <a href="kids-mode.html">Kids Mode</a>
+                    <a href="subscription.html">Subscribe</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <div class="hero-content">
+                <!-- Left side -->
+                <div class="hero-left">
+                    <div class="hero-text">
+                        <h1>Meet your next<br>favorite book.</h1>
+                        
+                        <div class="hero-features">
+                            <div class="feature">
+                                <h3>Deciding what to read next?</h3>
+                                <p>You're in the right place. Tell us what titles or genres you've enjoyed in the past, and we'll give you surprisingly insightful recommendations.</p>
+                            </div>
+                            
+                            <div class="feature">
+                                <h3>What are your friends reading?</h3>
+                                <p>Chances are your friends are discussing their favorite (and least favorite) books on Goodreads.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right side -->
+                <div class="hero-right">
+                    <div class="auth-container">
+                        <h3>Discover & read more</h3>
+                        
+                        <button class="btn btn-amazon">
+                            <i data-lucide="shopping-cart"></i>
+                            Continue with Amazon
+                        </button>
+                        
+                        <button class="btn btn-apple">
+                            <i data-lucide="apple"></i>
+                            Continue with Apple
+                        </button>
+                        
+                        <button class="btn btn-email">
+                            <i data-lucide="mail"></i>
+                            Sign up with email
+                        </button>
+                        
+                        <div class="terms">
+                            By creating an account, you agree to the Goodreads
+                            <a href="#">Terms of Service</a> and
+                            <a href="#">Privacy Policy</a>
+                        </div>
+                        
+                        <div class="signin-link">
+                            Already a member?
+                            <a href="#">Sign In</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="features-section">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="card-header">
+                        <i data-lucide="book-open"></i>
+                        <h3>Book Match Quiz</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Take our personalized quiz to find your perfect next read based on your preferences.</p>
+                        <a href="book-match.html" class="btn btn-outline">
+                            Take Quiz
+                            <i data-lucide="move-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="card-header">
+                        <i data-lucide="bar-chart-3"></i>
+                        <h3>Reading Tracker</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Track your reading progress, set goals, and get estimates on when you'll finish.</p>
+                        <a href="reading-tracker.html" class="btn btn-outline">
+                            View Tracker
+                            <i data-lucide="move-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="card-header">
+                        <i data-lucide="baby"></i>
+                        <h3>Kid Mode</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>A safe, fun reading environment with bedtime stories and read-aloud options.</p>
+                        <a href="kids-mode.html" class="btn btn-outline">
+                            Explore Kid Mode
+                            <i data-lucide="move-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Books Section -->
+        <div class="books-section">
+            <div class="books-header">
+                <h2>Discover Books</h2>
+                <div class="tabs">
+                    <button class="tab active" data-tab="featured">Featured</button>
+                    <button class="tab" data-tab="trending">Trending</button>
+                    <button class="tab" data-tab="audiobooks">Audiobooks</button>
+                </div>
+            </div>
+            
+            <div class="books-grid" id="booksGrid">
+                <!-- Books will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Subscription Promo -->
+        <div class="subscription-promo">
+            <div class="promo-content">
+                <div class="promo-text">
+                    <h3>
+                        <i data-lucide="trophy"></i>
+                        Premium Subscription
+                    </h3>
+                    <p>Get unlimited access to ebooks, audiobooks, and enhanced tracking features.</p>
+                    <a href="subscription.html" class="btn btn-primary">
+                        View Plans
+                        <i data-lucide="move-right"></i>
+                    </a>
+                </div>
+                
+                <div class="promo-stats">
+                    <div class="stat">
+                        <div class="stat-value">1M+</div>
+                        <div class="stat-label">Ebooks</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">50K+</div>
+                        <div class="stat-label">Audiobooks</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">$9.99</div>
+                        <div class="stat-label">Monthly</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div class="about-section">
+            <div class="about-content">
+                <div class="about-header">
+                    <h2>About Goodreads</h2>
+                    <p class="subtitle">Revolutionizing the way you discover and enjoy books</p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-card mission">
+                        <div class="card-icon">
+                            <i data-lucide="target"></i>
+                        </div>
+                        <h3>Our Mission</h3>
+                        <p>To make book discovery personalized and enjoyable for every reader. We believe that the right book at the right time can change lives.</p>
+                    </div>
+
+                    <div class="about-card ai">
+                        <div class="card-icon">
+                            <i data-lucide="brain"></i>
+                        </div>
+                        <h3>AI-Powered Matching</h3>
+                        <p>Our advanced AI algorithm analyzes your reading preferences, past favorites, and reading patterns to suggest books you'll truly love.</p>
+                    </div>
+
+                    <div class="about-card community">
+                        <div class="card-icon">
+                            <i data-lucide="users"></i>
+                        </div>
+                        <h3>Growing Community</h3>
+                        <p>Join millions of readers who have found their next favorite book through our platform. Share recommendations and track your reading journey.</p>
+                    </div>
+
+                    <div class="about-card innovation">
+                        <div class="card-icon">
+                            <i data-lucide="sparkles"></i>
+                        </div>
+                        <h3>Continuous Innovation</h3>
+                        <p>From our Kids Mode to advanced reading analytics, we're constantly developing new features to enhance your reading experience.</p>
+                    </div>
+                </div>
+
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">500K+</div>
+                        <div class="stat-label">Active Readers</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2M+</div>
+                        <div class="stat-label">Books Matched</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Happy Readers</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Support</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <a href="index.html" class="footer-logo">Goodreads</a>
+                <div class="footer-links">
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact us</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html> 

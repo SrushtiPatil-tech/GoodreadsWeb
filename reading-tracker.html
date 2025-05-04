@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Tracker - Goodreads</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/reading-tracker.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="header">
+            <nav class="nav-container">
+                <a href="index.html" class="logo">Goodreads</a>
+                <div class="nav-links">
+                    <a href="book-match.html">Book Match</a>
+                    <a href="reading-tracker.html" class="active">Reading Tracker</a>
+                    <a href="kids-mode.html">Kids Mode</a>
+                    <a href="subscription.html">Subscribe</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="tracker-section">
+            <div class="tracker-container">
+                <!-- Reading Stats -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i data-lucide="book-open"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Currently Reading</h3>
+                            <p class="stat-value">3 Books</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i data-lucide="check-circle"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Books Completed</h3>
+                            <p class="stat-value">12 this year</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i data-lucide="clock"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Reading Time</h3>
+                            <p class="stat-value">32 hours this month</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i data-lucide="target"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>2024 Goal</h3>
+                            <p class="stat-value">24/50 books</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reading Progress -->
+                <div class="progress-section">
+                    <div class="section-header">
+                        <h2>Reading Progress</h2>
+                        <div class="time-filter">
+                            <button class="active">Week</button>
+                            <button>Month</button>
+                            <button>Year</button>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="readingChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Current Books -->
+                <div class="current-books">
+                    <div class="section-header">
+                        <h2>Currently Reading</h2>
+                        <button class="btn btn-primary">
+                            <i data-lucide="plus"></i>
+                            Add Book
+                        </button>
+                    </div>
+                    
+                    <div class="books-grid">
+                        <!-- Book cards will be added dynamically via JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Reading History -->
+                <div class="reading-history">
+                    <div class="section-header">
+                        <h2>Reading History</h2>
+                        <button class="btn btn-outline">
+                            <i data-lucide="filter"></i>
+                            Filter
+                        </button>
+                    </div>
+                    
+                    <div class="history-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Book</th>
+                                    <th>Author</th>
+                                    <th>Pages Read</th>
+                                    <th>Time Spent</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Table rows will be added dynamically via JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <a href="index.html" class="footer-logo">Goodreads</a>
+                <div class="footer-links">
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/reading-tracker.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html> 

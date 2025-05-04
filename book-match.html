@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Match Quiz - Goodreads</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/book-match.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="header">
+            <nav class="nav-container">
+                <a href="index.html" class="logo">Goodreads</a>
+                <div class="nav-links">
+                    <a href="book-match.html" class="active">Book Match</a>
+                    <a href="reading-tracker.html">Reading Tracker</a>
+                    <a href="kids-mode.html">Kids Mode</a>
+                    <a href="subscription.html">Subscribe</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Quiz Section -->
+        <div class="quiz-section">
+            <div class="quiz-container">
+                <div class="quiz-header">
+                    <h1>Find Your Perfect Book Match</h1>
+                    <p>Answer a few questions to get personalized book recommendations tailored just for you.</p>
+                </div>
+
+                <div class="quiz-progress">
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 0%"></div>
+                    </div>
+                    <span class="progress-text">Question <span id="currentQuestion">1</span> of <span id="totalQuestions">8</span></span>
+                </div>
+
+                <form id="quizForm" class="quiz-form">
+                    <div class="question-container active" data-question="1">
+                        <h2>What genres do you enjoy reading?</h2>
+                        <p class="question-description">Select all that apply</p>
+                        <div class="options-grid">
+                            <label class="option-card">
+                                <input type="checkbox" name="genres" value="fiction">
+                                <span class="option-content">
+                                    <i data-lucide="book"></i>
+                                    Fiction
+                                </span>
+                            </label>
+                            <label class="option-card">
+                                <input type="checkbox" name="genres" value="mystery">
+                                <span class="option-content">
+                                    <i data-lucide="search"></i>
+                                    Mystery
+                                </span>
+                            </label>
+                            <label class="option-card">
+                                <input type="checkbox" name="genres" value="scifi">
+                                <span class="option-content">
+                                    <i data-lucide="rocket"></i>
+                                    Sci-Fi
+                                </span>
+                            </label>
+                            <label class="option-card">
+                                <input type="checkbox" name="genres" value="fantasy">
+                                <span class="option-content">
+                                    <i data-lucide="wand"></i>
+                                    Fantasy
+                                </span>
+                            </label>
+                            <label class="option-card">
+                                <input type="checkbox" name="genres" value="romance">
+                                <span class="option-content">
+                                    <i data-lucide="heart"></i>
+                                    Romance
+                                </span>
+                            </label>
+                            <label class="option-card">
+                                <input type="checkbox" name="genres" value="nonfiction">
+                                <span class="option-content">
+                                    <i data-lucide="graduation-cap"></i>
+                                    Non-Fiction
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question-container" data-question="2">
+                        <h2>How much time do you typically spend reading?</h2>
+                        <p class="question-description">Choose the option that best describes your reading habits</p>
+                        <div class="options-grid">
+                            <label class="option-card">
+                                <input type="radio" name="reading_time" value="light">
+                                <span class="option-content">
+                                    <i data-lucide="coffee"></i>
+                                    15-30 minutes a day
+                                </span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="reading_time" value="moderate">
+                                <span class="option-content">
+                                    <i data-lucide="book-open"></i>
+                                    1-2 hours a day
+                                </span>
+                            </label>
+                            <label class="option-card">
+                                <input type="radio" name="reading_time" value="heavy">
+                                <span class="option-content">
+                                    <i data-lucide="library"></i>
+                                    Several hours a day
+                                </span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- More questions will be added dynamically via JavaScript -->
+                </form>
+
+                <div class="quiz-navigation">
+                    <button id="prevButton" class="btn btn-outline" disabled>
+                        <i data-lucide="arrow-left"></i>
+                        Previous
+                    </button>
+                    <button id="nextButton" class="btn btn-primary">
+                        Next
+                        <i data-lucide="arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <a href="index.html" class="footer-logo">Goodreads</a>
+                <div class="footer-links">
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/book-match.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html> 

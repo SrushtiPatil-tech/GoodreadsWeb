@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Goodreads color scheme - beige/brown */
+  --background: 46 33% 94%; /* Beige background */
+  --foreground: 27 24% 27%; /* Brown text */
+  --muted: 46 25% 90%;
+  --muted-foreground: 27 15% 40%;
+  --popover: 46 33% 94%;
+  --popover-foreground: 27 24% 27%;
+  --card: 46 33% 94%;
+  --card-foreground: 27 24% 27%;
+  --border: 27 15% 85%;
+  --input: 27 15% 85%;
+  --primary: 22 40% 35%; /* Brown primary color */
+  --primary-foreground: 46 40% 95%;
+  --secondary: 46 30% 88%;
+  --secondary-foreground: 27 24% 27%;
+  --accent: 22 40% 35%;
+  --accent-foreground: 46 40% 95%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 27 24% 27%;
+  --radius: 0.5rem;
+  }
+  .dark {
+  /* Goodreads dark theme - darker brown/beige */
+  --background: 25 25% 15%; /* Dark brown */
+  --foreground: 40 30% 90%; /* Light beige text */
+  --muted: 25 20% 25%;
+  --muted-foreground: 40 15% 70%;
+  --popover: 25 25% 15%;
+  --popover-foreground: 40 30% 90%;
+  --card: 25 25% 15%;
+  --card-foreground: 40 30% 90%;
+  --border: 25 20% 25%;
+  --input: 25 20% 25%;
+  --primary: 35 40% 60%; /* Amber brown */
+  --primary-foreground: 25 20% 15%;
+  --secondary: 25 20% 25%;
+  --secondary-foreground: 40 30% 90%;
+  --accent: 35 40% 60%;
+  --accent-foreground: 25 20% 15%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 40 30% 90%;
+  --radius: 0.5rem;
+  }
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}

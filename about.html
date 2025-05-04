@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Goodreads</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .about-section {
+            padding: 4rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 0 2rem;
+        }
+
+        .about-header h1 {
+            font-size: 2.5rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+
+        .about-header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: #6366f1;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-icon i {
+            color: white;
+            width: 24px;
+            height: 24px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.25rem;
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            background: #f8fafc;
+            border-radius: 1rem;
+            margin: 0 2rem;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #6366f1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-header h1 {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .legal-sections {
+            padding: 4rem 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .legal-section {
+            margin-bottom: 4rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .legal-section h2 {
+            font-size: 2rem;
+            color: #1a1a1a;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #6366f1;
+        }
+
+        .legal-content h3 {
+            font-size: 1.25rem;
+            color: #1a1a1a;
+            margin: 1.5rem 0 1rem;
+        }
+
+        .legal-content p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .legal-content ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .legal-content li {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .legal-sections {
+                padding: 2rem 1rem;
+            }
+
+            .legal-section {
+                padding: 1.5rem;
+            }
+
+            .legal-section h2 {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="header">
+            <nav class="nav-container">
+                <a href="index.html" class="logo">Goodreads</a>
+                <div class="nav-links">
+                    <a href="book-match.html">Book Match</a>
+                    <a href="reading-tracker.html">Reading Tracker</a>
+                    <a href="kids-mode.html">Kids Mode</a>
+                    <a href="subscription.html">Subscribe</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="about-section">
+            <div class="about-header">
+                <h1>About Goodreads</h1>
+                <p>Revolutionizing the way you discover and enjoy books</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="target"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To make book discovery personalized and enjoyable for every reader. We believe that the right book at the right time can change lives.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="brain"></i>
+                    </div>
+                    <h3>AI-Powered Matching</h3>
+                    <p>Our advanced AI algorithm analyzes your reading preferences, past favorites, and reading patterns to suggest books you'll truly love.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <h3>Growing Community</h3>
+                    <p>Join millions of readers who have found their next favorite book through our platform. Share recommendations and track your reading journey.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="sparkles"></i>
+                    </div>
+                    <h3>Continuous Innovation</h3>
+                    <p>From our Kids Mode to advanced reading analytics, we're constantly developing new features to enhance your reading experience.</p>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">500K+</div>
+                    <div class="stat-label">Active Readers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2M+</div>
+                    <div class="stat-label">Books Matched</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Happy Readers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Support</div>
+                </div>
+            </div>
+
+            <!-- Terms and Privacy Sections -->
+            <div class="legal-sections">
+                <div class="legal-section terms">
+                    <h2 id="terms">Terms of Service</h2>
+                    <div class="legal-content">
+                        <h3>1. Acceptance of Terms</h3>
+                        <p>By accessing and using Goodreads, you agree to be bound by these Terms of Service and all applicable laws and regulations.</p>
+
+                        <h3>2. User Accounts</h3>
+                        <p>You are responsible for maintaining the confidentiality of your account and password. You agree to accept responsibility for all activities that occur under your account.</p>
+
+                        <h3>3. Content Guidelines</h3>
+                        <p>Users may post reviews, comments, and other content as long as the content is not illegal, obscene, threatening, defamatory, invasive of privacy, infringing on intellectual property rights, or otherwise injurious to third parties.</p>
+
+                        <h3>4. Subscription Services</h3>
+                        <p>Premium features require a paid subscription. Subscriptions automatically renew unless cancelled. Refunds are provided in accordance with our refund policy.</p>
+                    </div>
+                </div>
+
+                <div class="legal-section privacy">
+                    <h2 id="privacy">Privacy Policy</h2>
+                    <div class="legal-content">
+                        <h3>1. Information We Collect</h3>
+                        <p>We collect information you provide directly, including account information, reading preferences, and usage data to improve your experience.</p>
+
+                        <h3>2. How We Use Your Information</h3>
+                        <p>Your information helps us personalize book recommendations, improve our services, and communicate with you about new features and updates.</p>
+
+                        <h3>3. Data Security</h3>
+                        <p>We implement various security measures to maintain the safety of your personal information when you enter, submit, or access your personal information.</p>
+
+                        <h3>4. Cookies and Tracking</h3>
+                        <p>We use cookies and similar tracking technologies to track activity on our site and hold certain information to improve your experience.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <a href="index.html" class="footer-logo">Goodreads</a>
+                <div class="footer-links">
+                    <a href="about.html" class="active">About</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="#privacy">Privacy</a>
+                    <a href="#terms">Terms</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Smooth scroll to sections
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

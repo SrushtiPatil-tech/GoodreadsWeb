@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe - Goodreads</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <style>
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            padding: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pricing-card.popular {
+            border: 2px solid #6366f1;
+            position: relative;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: #6366f1;
+            color: white;
+            padding: 0.25rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+        }
+
+        .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1a1a1a;
+            margin: 1rem 0;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .features-list li {
+            margin: 0.75rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .features-list i {
+            color: #6366f1;
+        }
+
+        .subscribe-btn {
+            width: 100%;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            background: #6366f1;
+            color: white;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .subscribe-btn:hover {
+            background: #4f46e5;
+        }
+
+        .pdf-reader {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        #pdf-container {
+            width: 100%;
+            height: 800px;
+            border: 1px solid #ddd;
+            margin-top: 1rem;
+        }
+
+        .pdf-controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .pdf-controls button {
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            background: #6366f1;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .pdf-controls button:hover {
+            background: #4f46e5;
+        }
+
+        .book-selection {
+            margin-bottom: 2rem;
+        }
+
+        .book-select {
+            width: 100%;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        #book-preview {
+            background: #fff;
+            padding: 3rem;
+            border: 1px solid #ddd;
+            border-radius: 0.5rem;
+            min-height: 600px;
+            font-family: 'Merriweather', serif;
+            line-height: 1.8;
+        }
+
+        .preview-page {
+            display: none;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .preview-page.active {
+            display: block;
+        }
+
+        .preview-page h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .preview-page h3 {
+            font-size: 1.5rem;
+            text-align: center;
+            color: #666;
+            margin-bottom: 3rem;
+            font-style: italic;
+        }
+
+        .preview-text {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-align: justify;
+        }
+
+        .preview-notice {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            color: #6366f1;
+            font-weight: 600;
+            margin-top: 2rem;
+            border: 1px dashed #6366f1;
+        }
+
+        .pdf-controls {
+            background: #f8fafc;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="header">
+            <nav class="nav-container">
+                <a href="index.html" class="logo">Goodreads</a>
+                <div class="nav-links">
+                    <a href="book-match.html">Book Match</a>
+                    <a href="reading-tracker.html">Reading Tracker</a>
+                    <a href="kids-mode.html">Kids Mode</a>
+                    <a href="subscription.html" class="active">Subscribe</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <h1 class="text-center mb-8">Choose Your Reading Journey</h1>
+                
+                <div class="pricing-container">
+                    <!-- Free Plan -->
+                    <div class="pricing-card">
+                        <h2>Basic</h2>
+                        <div class="price">Free<span>/month</span></div>
+                        <ul class="features-list">
+                            <li><i data-lucide="check"></i> Basic book recommendations</li>
+                            <li><i data-lucide="check"></i> Reading progress tracking</li>
+                            <li><i data-lucide="check"></i> Access to sample books</li>
+                            <li><i data-lucide="check"></i> Kids Mode basic stories</li>
+                        </ul>
+                        <button class="subscribe-btn">Get Started</button>
+                    </div>
+
+                    <!-- Premium Plan -->
+                    <div class="pricing-card popular">
+                        <div class="popular-badge">Most Popular</div>
+                        <h2>Premium</h2>
+                        <div class="price">$9.99<span>/month</span></div>
+                        <ul class="features-list">
+                            <li><i data-lucide="check"></i> Advanced AI recommendations</li>
+                            <li><i data-lucide="check"></i> Unlimited PDF book access</li>
+                            <li><i data-lucide="check"></i> Detailed reading analytics</li>
+                            <li><i data-lucide="check"></i> Full Kids Mode access</li>
+                            <li><i data-lucide="check"></i> Offline reading</li>
+                            <li><i data-lucide="check"></i> Ad-free experience</li>
+                        </ul>
+                        <button class="subscribe-btn">Subscribe Now</button>
+                    </div>
+
+                    <!-- Pro Plan -->
+                    <div class="pricing-card">
+                        <h2>Family</h2>
+                        <div class="price">$14.99<span>/month</span></div>
+                        <ul class="features-list">
+                            <li><i data-lucide="check"></i> All Premium features</li>
+                            <li><i data-lucide="check"></i> Up to 6 family members</li>
+                            <li><i data-lucide="check"></i> Family reading insights</li>
+                            <li><i data-lucide="check"></i> Parental controls</li>
+                            <li><i data-lucide="check"></i> Priority support</li>
+                        </ul>
+                        <button class="subscribe-btn">Choose Family</button>
+                    </div>
+                </div>
+
+                <!-- PDF Reader Section (Premium Feature) -->
+                <div class="pdf-reader">
+                    <h2>Premium PDF Reader</h2>
+                    <p>Access and read your favorite books directly in your browser. Available for Premium and Family plan subscribers.</p>
+                    
+                    <div class="book-selection">
+                        <h3>Sample Books Preview</h3>
+                        <select id="book-selector" class="book-select">
+                            <option value="preview-1">The Great Gatsby (Preview)</option>
+                            <option value="preview-2">Pride and Prejudice (Preview)</option>
+                            <option value="preview-3">The Art of War (Preview)</option>
+                        </select>
+                    </div>
+
+                    <div class="pdf-controls">
+                        <button id="prev-page">Previous</button>
+                        <button id="next-page">Next</button>
+                        <span>Page: <span id="page-num">1</span> / <span id="page-count">3</span></span>
+                    </div>
+                    
+                    <div id="book-preview">
+                        <div class="preview-page active" data-page="1">
+                            <h1>The Great Gatsby</h1>
+                            <h3>by F. Scott Fitzgerald</h3>
+                            <p class="preview-text">
+                                In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.
+                                "Whenever you feel like criticizing any one," he told me, "just remember that all the people in this world haven't had the advantages that you've had."
+                            </p>
+                            <div class="preview-notice">
+                                Subscribe to Premium to access the full book and thousands more!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <a href="index.html" class="footer-logo">Goodreads</a>
+                <div class="footer-links">
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // PDF.js initialization
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+        let pdfDoc = null,
+            pageNum = 1,
+            pageRendering = false,
+            pageNumPending = null,
+            scale = 1.5,
+            canvas = document.getElementById('pdf-container'),
+            ctx = canvas.getContext('2d');
+
+        function renderPage(num) {
+            pageRendering = true;
+            pdfDoc.getPage(num).then(function(page) {
+                let viewport = page.getViewport({scale: scale});
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                let renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+                let renderTask = page.render(renderContext);
+
+                renderTask.promise.then(function() {
+                    pageRendering = false;
+                    if (pageNumPending !== null) {
+                        renderPage(pageNumPending);
+                        pageNumPending = null;
+                    }
+                });
+            });
+
+            document.getElementById('page-num').textContent = num;
+        }
+
+        function queueRenderPage(num) {
+            if (pageRendering) {
+                pageNumPending = num;
+            } else {
+                renderPage(num);
+            }
+        }
+
+        function onPrevPage() {
+            if (pageNum <= 1) {
+                return;
+            }
+            pageNum--;
+            queueRenderPage(pageNum);
+        }
+
+        function onNextPage() {
+            if (pageNum >= pdfDoc.numPages) {
+                return;
+            }
+            pageNum++;
+            queueRenderPage(pageNum);
+        }
+
+        document.getElementById('prev-page').addEventListener('click', onPrevPage);
+        document.getElementById('next-page').addEventListener('click', onNextPage);
+
+        // Example of loading a PDF (commented out as it needs a real PDF URL)
+        /*
+        pdfjsLib.getDocument('sample-book.pdf').promise.then(function(pdfDoc_) {
+            pdfDoc = pdfDoc_;
+            document.getElementById('page-count').textContent = pdfDoc.numPages;
+            renderPage(pageNum);
+        });
+        */
+
+        // Book preview functionality
+        const bookSelector = document.getElementById('book-selector');
+        const previewTexts = {
+            'preview-1': {
+                title: 'The Great Gatsby',
+                author: 'F. Scott Fitzgerald',
+                text: `In my younger and more vulnerable years my father gave me some advice that I've been turning over in my mind ever since.
+                      "Whenever you feel like criticizing any one," he told me, "just remember that all the people in this world haven't had the advantages that you've had."`
+            },
+            'preview-2': {
+                title: 'Pride and Prejudice',
+                author: 'Jane Austen',
+                text: `It is a truth universally acknowledged, that a single man in possession of a good fortune, must be in want of a wife.
+                      However little known the feelings or views of such a man may be on his first entering a neighbourhood, this truth is so well fixed in the minds of the surrounding families, that he is considered the rightful property of some one or other of their daughters.`
+            },
+            'preview-3': {
+                title: 'The Art of War',
+                author: 'Sun Tzu',
+                text: `The art of war is of vital importance to the State. It is a matter of life and death, a road either to safety or to ruin.
+                      Hence it is a subject of inquiry which can on no account be neglected. The art of war, then, is governed by five constant factors, to be taken into account in one's deliberations, when seeking to determine the conditions obtaining in the field.`
+            }
+        };
+
+        bookSelector.addEventListener('change', function() {
+            const selectedBook = previewTexts[this.value];
+            const previewPage = document.querySelector('.preview-page');
+            
+            previewPage.innerHTML = `
+                <h1>${selectedBook.title}</h1>
+                <h3>by ${selectedBook.author}</h3>
+                <p class="preview-text">${selectedBook.text}</p>
+                <div class="preview-notice">
+                    Subscribe to Premium to access the full book and thousands more!
+                </div>
+            `;
+        });
+
+        // Navigation buttons functionality
+        document.getElementById('prev-page').addEventListener('click', function() {
+            alert('Subscribe to Premium to access full book navigation!');
+        });
+
+        document.getElementById('next-page').addEventListener('click', function() {
+            alert('Subscribe to Premium to access full book navigation!');
+        });
+    </script>
+</body>
+</html> 

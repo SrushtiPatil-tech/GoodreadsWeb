@@ -1,0 +1,44 @@
+run = "python -m http.server 8000"
+modules = ["python-3.10:v18-20230807-322e88b"]
+hidden = [".config", "generated-icon.png", "node_modules", "dist"]
+
+[nix]
+channel = "stable-24_05"
+
+[deployment]
+deploymentTarget = "autoscale"
+build = ["npm", "run", "build"]
+run = ["sh", "-c", "python -m http.server 8000"]
+
+[[ports]]
+localPort = 8000
+externalPort = 80
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "Start application"
+
+[[workflows.workflow]]
+name = "Start application"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "npm run dev"
+waitForPort = 5000
+
+[languages]
+[languages.html]
+pattern = "**/*.html"
+[languages.css]
+pattern = "**/*.css"
+[languages.js]
+pattern = "**/*.js"

@@ -1,0 +1,274 @@
+/* Hero section styles */
+.hero-section {
+    background-color: var(--secondary-color);
+    padding: 4rem 2rem;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 4rem;
+}
+
+.hero-left {
+    flex: 2;
+}
+
+.hero-right {
+    flex: 1;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+    color: var(--text-secondary);
+    line-height: 1.2;
+    margin-bottom: 3rem;
+}
+
+.hero-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+}
+
+.hero-features .feature h3 {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+}
+
+.hero-features .feature p {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.auth-container {
+    max-width: 320px;
+    margin: 0 auto;
+}
+
+.auth-container h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.125rem;
+}
+
+.auth-container .btn {
+    margin-bottom: 1rem;
+}
+
+.terms {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin: 1rem 0;
+}
+
+.terms a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.terms a:hover {
+    text-decoration: underline;
+}
+
+.signin-link {
+    text-align: center;
+    font-size: 0.875rem;
+    margin-top: 1rem;
+}
+
+.signin-link a {
+    color: #16a34a;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 0.25rem;
+}
+
+.signin-link a:hover {
+    text-decoration: underline;
+}
+
+/* Features section styles */
+.features-section {
+    padding: 4rem 2rem;
+    background-color: white;
+}
+
+.features-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+/* Books section styles */
+.books-section {
+    padding: 4rem 2rem;
+    background-color: white;
+}
+
+.books-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.books-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.tabs {
+    display: flex;
+    gap: 1rem;
+}
+
+.tab {
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: var(--text-muted);
+}
+
+.tab.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.books-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+/* Subscription promo styles */
+.subscription-promo {
+    padding: 4rem 2rem;
+    background-color: var(--secondary-color);
+}
+
+.promo-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+}
+
+.promo-text {
+    flex: 1;
+}
+
+.promo-text h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.promo-text h3 i {
+    color: var(--primary-color);
+}
+
+.promo-text p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.promo-stats {
+    display: flex;
+    gap: 2rem;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.25rem;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .hero-content {
+        flex-direction: column;
+    }
+
+    .hero-right {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    .hero-features {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .promo-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .promo-stats {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .books-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .tabs {
+        justify-content: center;
+    }
+
+    .promo-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+} 

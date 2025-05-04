@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Mode - Goodreads</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/kids-mode.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="header">
+            <nav class="nav-container">
+                <a href="index.html" class="logo">Goodreads</a>
+                <div class="nav-links">
+                    <a href="book-match.html">Book Match</a>
+                    <a href="reading-tracker.html">Reading Tracker</a>
+                    <a href="kids-mode.html" class="active">Kids Mode</a>
+                    <a href="subscription.html">Subscribe</a>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="container">
+                <div class="kids-header">
+                    <h1>Bedtime Stories</h1>
+                    <p>Discover magical stories perfect for bedtime reading!</p>
+                </div>
+
+                <!-- Stories Grid -->
+                <div class="stories-grid">
+                    <!-- Story cards will be populated by JavaScript -->
+                </div>
+
+                <!-- Story Reader Modal -->
+                <div id="storyModal" class="modal">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 id="storyTitle"></h2>
+                            <button class="close-btn">
+                                <i data-lucide="x"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="story-controls">
+                                <button id="playButton" class="control-btn">
+                                    <i data-lucide="play"></i>
+                                </button>
+                                <button id="pauseButton" class="control-btn" style="display: none;">
+                                    <i data-lucide="pause"></i>
+                                </button>
+                                <button id="stopButton" class="control-btn">
+                                    <i data-lucide="square"></i>
+                                </button>
+                                <div class="volume-control">
+                                    <i data-lucide="volume-2"></i>
+                                    <input type="range" id="volumeSlider" min="0" max="1" step="0.1" value="0.5">
+                                </div>
+                            </div>
+                            <div id="storyContent" class="story-content">
+                                <!-- Story text will be inserted here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <a href="index.html" class="footer-logo">Goodreads</a>
+                <div class="footer-links">
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/kids-mode.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html> 
